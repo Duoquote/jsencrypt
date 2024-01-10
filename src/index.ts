@@ -1,3 +1,4 @@
 import { JSEncrypt } from './JSEncrypt.ts';
-export { JSEncrypt }
+import { JSEncryptRSAKey } from './JSEncryptRSAKey.ts';
+export { JSEncrypt, JSEncryptRSAKey }
 export default JSEncrypt;
