@@ -27,7 +27,7 @@ import {SecureRandom} from "./rng.ts";
 
 function pkcs1pad1(s:string, n:number) {
     if (n < s.length + 22) {
-        console.error("Message too long for RSA");
+        console.error("Message too long for RSA pkcs1pad1");
         return null;
     }
     const len = n - s.length - 6;
@@ -43,7 +43,7 @@ function pkcs1pad1(s:string, n:number) {
 function pkcs1pad2(s:string, n:number) {
     if (n < s.length + 11) { // TODO: fix for utf-8
 
-        console.error("Message too long for RSA");
+        console.error("Message too long for RSA pkcs1pad2");
         return null;
     }
     const ba = [];

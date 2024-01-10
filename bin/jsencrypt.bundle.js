@@ -810,6 +810,11 @@ class ASN1Tag {
         return this.tagClass === 0x00 && this.tagNumber === 0x00;
     }
 }
+const __default = {
+    ASN1,
+    ASN1Tag,
+    Stream
+};
 let dbits;
 const j_lm = (0xdeadbeefcafe & 0xffffff) == 0xefcafe;
 const lowprimes = [
@@ -2459,6 +2464,103 @@ function nbits(x) {
 }
 BigInteger.ZERO = nbv(0);
 BigInteger.ONE = nbv(1);
+const __default1 = {
+    parseBigInt,
+    nbi,
+    nbv,
+    nbits,
+    intAt,
+    BigInteger,
+    Barrett,
+    Classic,
+    Montgomery,
+    NullExp,
+    lowprimes,
+    lplim,
+    op_and,
+    op_or,
+    op_xor,
+    op_andnot,
+    op_not,
+    bnClone,
+    bnIntValue,
+    bnByteValue,
+    bnShortValue,
+    bnpChunkSize,
+    bnSigNum,
+    bnEquals,
+    bnpExp,
+    bnModPowInt,
+    bnClone,
+    bnIntValue,
+    bnByteValue,
+    bnShortValue,
+    bnpChunkSize,
+    bnSigNum,
+    bnEquals,
+    bnpExp,
+    bnModPowInt,
+    bnMultiply,
+    bnPow,
+    bnPowInt,
+    bnModPow,
+    bnGCD,
+    bnpModInt,
+    bnModInverse,
+    bnIsProbablePrime,
+    bnpMillerRabin,
+    bnSubtract,
+    bnMultiplyTo,
+    bnSquareTo,
+    bnpDivRemTo,
+    bnMod,
+    bnModPowInt,
+    bnMultiplyLowerTo,
+    bnMultiplyUpperTo,
+    bnModInt,
+    bnIsProbablePrime,
+    bnCompareTo,
+    bnpNegate,
+    bnpAddTo,
+    bnpSubTo,
+    bnpMultiplyTo,
+    bnpSquareTo,
+    bnpDivRemTo,
+    bnMod,
+    bnModPowInt,
+    bnMultiplyLowerTo,
+    bnMultiplyUpperTo,
+    bnModInt,
+    bnIsProbablePrime,
+    bnCompareTo,
+    bnpNegate,
+    bnpAddTo,
+    bnpSubTo,
+    bnpMultiplyTo,
+    bnpSquareTo,
+    bnpDivRemTo,
+    bnMod,
+    bnModPowInt,
+    bnMultiplyLowerTo,
+    bnMultiplyUpperTo,
+    bnModInt,
+    bnIsProbablePrime,
+    bnCompareTo,
+    bnpNegate,
+    bnpAddTo,
+    bnpSubTo,
+    bnpMultiplyTo,
+    bnpSquareTo,
+    bnpDivRemTo,
+    bnMod,
+    bnModPowInt,
+    bnMultiplyLowerTo,
+    bnMultiplyUpperTo,
+    bnModInt,
+    bnIsProbablePrime,
+    bnCompareTo,
+    bnpNegate
+};
 class Arcfour {
     constructor(){
         this.i = 0;
@@ -2562,7 +2664,7 @@ class SecureRandom {
 }
 function pkcs1pad1(s, n) {
     if (n < s.length + 22) {
-        console.error("Message too long for RSA");
+        console.error("Message too long for RSA pkcs1pad1");
         return null;
     }
     const len = n - s.length - 6;
@@ -2575,7 +2677,7 @@ function pkcs1pad1(s, n) {
 }
 function pkcs1pad2(s, n) {
     if (n < s.length + 11) {
-        console.error("Message too long for RSA");
+        console.error("Message too long for RSA pkcs1pad2");
         return null;
     }
     const ba = [];
@@ -3857,5 +3959,5 @@ class JSEncrypt {
         return this.getKey().getPublicBaseKeyB64();
     }
 }
-export { JSEncrypt as JSEncrypt, JSEncryptRSAKey as JSEncryptRSAKey };
+export { JSEncrypt as JSEncrypt, JSEncryptRSAKey as JSEncryptRSAKey, __default as ASN, __default1 as JSBN };
 export { JSEncrypt as default };

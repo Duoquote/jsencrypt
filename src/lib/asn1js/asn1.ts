@@ -596,3 +596,5 @@ export class ASN1Tag {
         return this.tagClass === 0x00 && this.tagNumber === 0x00;
     }
 }
+
+export default { ASN1, ASN1Tag, Stream };

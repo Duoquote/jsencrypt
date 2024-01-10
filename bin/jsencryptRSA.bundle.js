@@ -2525,7 +2525,7 @@ class SecureRandom {
 }
 function pkcs1pad1(s, n) {
     if (n < s.length + 22) {
-        console.error("Message too long for RSA");
+        console.error("Message too long for RSA pkcs1pad1");
         return null;
     }
     const len = n - s.length - 6;
@@ -2538,7 +2538,7 @@ function pkcs1pad1(s, n) {
 }
 function pkcs1pad2(s, n) {
     if (n < s.length + 11) {
-        console.error("Message too long for RSA");
+        console.error("Message too long for RSA pkcs1pad2");
         return null;
     }
     const ba = [];
