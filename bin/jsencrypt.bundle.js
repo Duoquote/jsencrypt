@@ -3880,5 +3880,5 @@ class JSEncrypt {
         return this.getKey().getPublicBaseKeyB64();
     }
 }
-export { JSEncrypt as JSEncrypt, JSEncryptRSAKey as JSEncryptRSAKey, __default as ASN, __default1 as JSBN };
+export { JSEncrypt as JSEncrypt, JSEncryptRSAKey as JSEncryptRSAKey, __default as ASN, __default1 as JSBN, Base64 as Base64 };
 export { JSEncrypt as default };
