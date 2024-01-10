@@ -2,6 +2,27 @@ Website
 ======================
 http://travistidwell.com/jsencrypt
 
+Modified to use with deno
+======================
+Example usage:
+```javascript
+G:\projects\jsencrypt>deno
+Deno 1.39.2
+exit using ctrl+d, ctrl+c, or close()
+REPL is running with all permissions allowed.
+To specify permissions, run `deno repl` with allow flags.
+> import JSEncrypt from "https://raw.githubusercontent.com/Duoquote/jsencrypt/master/bin/jsencrypt.bundle.js";
+undefined
+> new JSEncrypt()
+JSEncrypt {
+  default_key_size: 1024,
+  default_public_exponent: "010001",
+  log: false,
+  key: null
+}
+>
+```
+
 Introduction
 ======================
 When browsing the internet looking for a good solution to RSA Javascript
