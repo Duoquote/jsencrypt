@@ -6,7 +6,9 @@
     "module": "lib/index.js",
     "browser": "lib/index.js",
     "types": "lib/index.d.ts",
-    "dependencies": {},
+    "dependencies": {
+        "js-jsbn": "^1.4.1-beta.1"
+    },
     "devDependencies": {
         "@babel/core": "^7.20.12",
         "@babel/preset-env": "^7.20.2",
@@ -17,6 +19,7 @@
         "@types/node": "^18.11.4",
         "chai": "^4.3.6",
         "dirty-chai": "^2.0.1",
+        "esbuild": "^0.19.11",
         "fs-jetpack": "^5.1.0",
         "mocha": "^10.0.0",
         "process": "^0.11.10",
@@ -36,6 +39,7 @@
         "build:test": "tsc && tsc --project tsconfig-def.json && webpack --config webpack.test.js",
         "build:prod": "tsc && tsc --project tsconfig-def.json && webpack --config webpack.prod.js",
         "build:deno": "deno run --allow-env --allow-read --allow-write --allow-net --allow-run --unstable scripts/deno-build.js",
+        "build:esbuild": "esbuild src/index.ts --bundle --format=esm --outfile=bin/jsencrypt.esbuild.js",
         "build": "npm run build:dev && npm run build:test && npm run build:prod",
         "serve": "bundle exec jekyll server --config _config.build.yml",
         "test": "ts-mocha test/test.rsa.js"
