@@ -85,3 +85,5 @@ export const Base64 = {
         return Base64.decode(a);
     }
 };
+
+export default Base64;
