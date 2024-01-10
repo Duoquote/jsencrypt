@@ -1,5 +1,5 @@
 // Random number generator - requires a PRNG backend, e.g. prng4.js
-import {Arcfour, prng_newstate, rng_psize} from "./prng4";
+import {Arcfour, prng_newstate, rng_psize} from "./prng4.ts";
 
 let rng_state:Arcfour;
 let rng_pool:number[] = null;

@@ -1,5 +1,5 @@
-import { b64tohex, hex2b64 } from "./lib/jsbn/base64";
-import { JSEncryptRSAKey } from "./JSEncryptRSAKey";
+import { b64tohex, hex2b64 } from "./lib/jsbn/base64.ts";
+import { JSEncryptRSAKey } from "./JSEncryptRSAKey.ts";
 const version = typeof process !== 'undefined'
     ? process.env?.npm_package_version
     : undefined;

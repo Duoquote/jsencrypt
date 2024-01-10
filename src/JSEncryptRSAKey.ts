@@ -1,10 +1,10 @@
-import { hex2b64 } from "./lib/jsbn/base64";
-import { Hex } from "./lib/asn1js/hex";
-import { Base64 } from "./lib/asn1js/base64";
-import { ASN1 } from "./lib/asn1js/asn1";
-import { RSAKey } from "./lib/jsbn/rsa";
-import { parseBigInt } from "./lib/jsbn/jsbn";
-import { KJUR } from "./lib/jsrsasign/asn1-1.0";
+import { hex2b64 } from "./lib/jsbn/base64.ts";
+import { Hex } from "./lib/asn1js/hex.ts";
+import { Base64 } from "./lib/asn1js/base64.ts";
+import { ASN1 } from "./lib/asn1js/asn1.ts";
+import { RSAKey } from "./lib/jsbn/rsa.ts";
+import { parseBigInt } from "./lib/jsbn/jsbn.ts";
+import { KJUR } from "./lib/jsrsasign/asn1-1.0.js";
 
 /**
  * Create a new JSEncryptRSAKey that extends Tom Wu's RSA key object.

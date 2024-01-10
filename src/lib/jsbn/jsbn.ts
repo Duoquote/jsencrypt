@@ -4,8 +4,8 @@
 
 // Basic JavaScript BN library - subset useful for RSA encryption.
 
-import {cbit, int2char, lbit, op_and, op_andnot, op_or, op_xor} from "./util";
-import {SecureRandom} from "./rng";
+import {cbit, int2char, lbit, op_and, op_andnot, op_or, op_xor} from "./util.ts";
+import {SecureRandom} from "./rng.ts";
 // Bits per digit
 let dbits;
 

@@ -12,8 +12,8 @@
  * included in all copies or substantial portions of the Software.
  */
 
-import { BigInteger } from "../jsbn/jsbn";
-import { YAHOO } from "./yahoo";
+import { BigInteger } from "../jsbn/jsbn.ts";
+import { YAHOO } from "./yahoo.js";
 
 /**
  * @fileOverview

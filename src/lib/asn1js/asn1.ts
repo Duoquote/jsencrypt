@@ -16,7 +16,7 @@
 /*jshint browser: true, strict: true, immed: true, latedef: true, undef: true, regexdash: false */
 /*global oids */
 
-import {Int10} from "./int10";
+import {Int10} from "./int10.ts";
 
 const ellipsis = "\u2026";
 const reTimeS =     /^(\d\d)(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])([01]\d|2[0-3])(?:([0-5]\d)(?:([0-5]\d)(?:[.,](\d{1,3}))?)?)?(Z|[-+](?:[0]\d|1[0-2])([0-5]\d)?)?$/;

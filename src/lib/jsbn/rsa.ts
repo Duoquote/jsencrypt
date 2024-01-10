@@ -4,8 +4,8 @@
 
 // convert a (hex) string to a bignum object
 
-import {BigInteger, nbi, parseBigInt} from "./jsbn";
-import {SecureRandom} from "./rng";
+import {BigInteger, nbi, parseBigInt} from "./jsbn.ts";
+import {SecureRandom} from "./rng.ts";
 
 
 // function linebrk(s,n) {

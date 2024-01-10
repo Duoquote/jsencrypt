@@ -1,4 +1,4 @@
-import {int2char} from "./util";
+import {int2char} from "./util.ts";
 
 const b64map = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 const b64pad = "=";
