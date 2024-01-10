@@ -40,7 +40,7 @@ export class BigInteger {
             // am2 avoids a big mult-and-extract completely.
             // Max digit bits should be <= 30 because we do bitwise ops
             // on values up to 2*hdvalue^2-hdvalue-1 (< 2^31)
-            this.am = function am2(i:number, x:number, w:BigInteger, j:number, c:number, n:number) {
+            BigInteger.prototype.am = function am2(i:number, x:number, w:BigInteger, j:number, c:number, n:number) {
                 const xl = x & 0x7fff;
                 const xh = x >> 15;
                 while (--n >= 0) {
@@ -58,7 +58,7 @@ export class BigInteger {
             // am1: use a single mult and divide to get the high bits,
             // max digit bits should be 26 because
             // max internal value = 2*dvalue^2-2*dvalue (< 2^53)
-            this.am = function am1(i:number, x:number, w:BigInteger, j:number, c:number, n:number) {
+            BigInteger.prototype.am = function am1(i:number, x:number, w:BigInteger, j:number, c:number, n:number) {
                 while (--n >= 0) {
                     const v = x * this[i++] + w[j] + c;
                     c = Math.floor(v / 0x4000000);
@@ -70,7 +70,7 @@ export class BigInteger {
         } else { // Mozilla/Netscape seems to prefer am3
             // Alternately, set max digit bits to 28 since some
             // browsers slow down when dealing with 32-bit numbers.
-            this.am = function am3(i:number, x:number, w:BigInteger, j:number, c:number, n:number) {
+            BigInteger.prototype.am = function am3(i:number, x:number, w:BigInteger, j:number, c:number, n:number) {
                 const xl = x & 0x3fff;
                 const xh = x >> 14;
                 while (--n >= 0) {
@@ -86,14 +86,14 @@ export class BigInteger {
             dbits = 28;
         }
 
-        this.DB = dbits;
-        this.DM = ((1 << dbits) - 1);
-        this.DV = (1 << dbits);
+        BigInteger.prototype.DB = dbits;
+        BigInteger.prototype.DM = ((1 << dbits) - 1);
+        BigInteger.prototype.DV = (1 << dbits);
 
         const BI_FP = 52;
-        this.FV = Math.pow(2, BI_FP);
-        this.F1 = BI_FP - dbits;
-        this.F2 = 2 * dbits - BI_FP;
+        BigInteger.prototype.FV = Math.pow(2, BI_FP);
+        BigInteger.prototype.F1 = BI_FP - dbits;
+        BigInteger.prototype.F2 = 2 * dbits - BI_FP;
     }
 
   //#region PUBLIC

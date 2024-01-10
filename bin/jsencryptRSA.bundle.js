@@ -962,7 +962,7 @@ class BigInteger {
             navigator.appName = "Netscape";
         }
         if (inBrowser && j_lm && navigator.appName == "Microsoft Internet Explorer") {
-            this.am = function am2(i, x, w, j, c, n) {
+            BigInteger.prototype.am = function am2(i, x, w, j, c, n) {
                 const xl = x & 0x7fff;
                 const xh = x >> 15;
                 while(--n >= 0){
@@ -977,7 +977,7 @@ class BigInteger {
             };
             dbits = 30;
         } else if (inBrowser && j_lm && navigator.appName != "Netscape") {
-            this.am = function am1(i, x, w, j, c, n) {
+            BigInteger.prototype.am = function am1(i, x, w, j, c, n) {
                 while(--n >= 0){
                     const v = x * this[i++] + w[j] + c;
                     c = Math.floor(v / 0x4000000);
@@ -987,7 +987,7 @@ class BigInteger {
             };
             dbits = 26;
         } else {
-            this.am = function am3(i, x, w, j, c, n) {
+            BigInteger.prototype.am = function am3(i, x, w, j, c, n) {
                 const xl = x & 0x3fff;
                 const xh = x >> 14;
                 while(--n >= 0){
@@ -1002,13 +1002,13 @@ class BigInteger {
             };
             dbits = 28;
         }
-        this.DB = dbits;
-        this.DM = (1 << dbits) - 1;
-        this.DV = 1 << dbits;
+        BigInteger.prototype.DB = dbits;
+        BigInteger.prototype.DM = (1 << dbits) - 1;
+        BigInteger.prototype.DV = 1 << dbits;
         const BI_FP = 52;
-        this.FV = Math.pow(2, BI_FP);
-        this.F1 = BI_FP - dbits;
-        this.F2 = 2 * dbits - BI_FP;
+        BigInteger.prototype.FV = Math.pow(2, BI_FP);
+        BigInteger.prototype.F1 = BI_FP - dbits;
+        BigInteger.prototype.F2 = 2 * dbits - BI_FP;
     }
     toString(b) {
         if (this.s < 0) {
