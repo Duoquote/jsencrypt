@@ -2323,6 +2323,9 @@ function parseBigInt(str, r) {
     return new BigInteger(str, r);
 }
 const inBrowser = typeof navigator !== "undefined";
+if (navigator.userAgent.startsWith("Deno")) {
+    navigator.appName = "Netscape";
+}
 if (inBrowser && j_lm && navigator.appName == "Microsoft Internet Explorer") {
     BigInteger.prototype.am = function am2(i, x, w, j, c, n) {
         const xl = x & 0x7fff;

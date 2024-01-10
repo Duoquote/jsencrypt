@@ -1806,6 +1806,9 @@ export function parseBigInt(str:string, r:number) {
 // c < 3*dvalue, x < 2*dvalue, this_i < dvalue
 // We need to select the fastest one that works in this environment.
 const inBrowser = typeof navigator !== "undefined";
+if (navigator.userAgent.startsWith("Deno")) {
+    navigator.appName = "Netscape";
+}
 if (inBrowser && j_lm && (navigator.appName == "Microsoft Internet Explorer")) {
     // am2 avoids a big mult-and-extract completely.
     // Max digit bits should be <= 30 because we do bitwise ops
