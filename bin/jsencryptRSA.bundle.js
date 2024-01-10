@@ -948,15 +948,6 @@ const lowprimes = [
 const lplim = (1 << 26) / lowprimes[lowprimes.length - 1];
 class BigInteger {
     constructor(a, b, c){
-        if (a != null) {
-            if ("number" == typeof a) {
-                this.fromNumber(a, b, c);
-            } else if (b == null && "string" != typeof a) {
-                this.fromString(a, 256);
-            } else {
-                this.fromString(a, b);
-            }
-        }
         const inBrowser = typeof navigator !== "undefined";
         if (navigator.userAgent.startsWith("Deno")) {
             navigator.appName = "Netscape";
@@ -1009,6 +1000,15 @@ class BigInteger {
         BigInteger.prototype.FV = Math.pow(2, BI_FP);
         BigInteger.prototype.F1 = BI_FP - dbits;
         BigInteger.prototype.F2 = 2 * dbits - BI_FP;
+        if (a != null) {
+            if ("number" == typeof a) {
+                this.fromNumber(a, b, c);
+            } else if (b == null && "string" != typeof a) {
+                this.fromString(a, 256);
+            } else {
+                this.fromString(a, b);
+            }
+        }
     }
     toString(b) {
         if (this.s < 0) {
